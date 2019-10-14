@@ -81,6 +81,7 @@ function birthdayAgeToCalendar() { //дни рождения
     }
 }
 
+
 function anniversaryAgeToCalendar() { //юбилеи
     for (var i in events) {
         Logger.log('anniversaryAgeToCalendar. Юбилеи. Найдено: ' + events[i].getTitle());
