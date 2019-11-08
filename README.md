@@ -9,7 +9,7 @@ ________
 ![Событие в календаре](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.png)
 ________
 # :star: Months and years of a baby, monthly reminder.gs :star:
-*Скрипт Google Apps Script [Months and years of a baby, monthly reminder.gs](/Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs), для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.*
+*Скрипт Google Apps Script [Months and years of a baby, monthly reminder.gs](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs), для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.*
 
 Написал код, который облегчает жизнь молодым отцам - ведь в то время как все бабушки отлично помнят день рождения своего внука/внучки и поздравляют с этим событием ежемесячно - мне никак не удавалось удержать это в памяти. Решил слегка автоматизировать процесс и заодно разобраться как работать с датами в Google Apps Script. И конечно же сделать, чтобы эта напоминалка появлялась заблаговременно, а не в день рождения малыша!
-![Событие в календаре](/Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.png)
+![Событие в календаре](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.png)
