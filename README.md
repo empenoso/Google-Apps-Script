@@ -1,5 +1,6 @@
-- Google Calendar_Сalculates a person’s age.gs 
-- Google Calendar_Months and years of a baby, monthly reminder.gs
+1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script#star-google-calendar_%D1%81alculates-a-persons-agegs-star)
+
+2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script#star-google-calendar_months-and-years-of-a-baby-monthly-remindergs-star)
 ________
 # :star: Google Calendar_Сalculates a person’s age.gs :star:
 *Скрипт Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs), который создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре.*
@@ -11,5 +12,5 @@ ________
 # :star: Google Calendar_Months and years of a baby, monthly reminder.gs :star:
 *Скрипт Google Apps Script [Months and years of a baby, monthly reminder.gs](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs), для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.*
 
-Написал код, который облегчает жизнь молодым отцам - ведь в то время как все бабушки отлично помнят день рождения своего внука/внучки и поздравляют с этим событием ежемесячно - мне никак не удавалось удержать это в памяти. Решил слегка автоматизировать процесс и заодно разобраться как работать с датами в Google Apps Script. И конечно же сделать, чтобы эта напоминалка появлялась заблаговременно, а не в день рождения малыша!
+Это код, который облегчает жизнь молодым отцам - ведь в то время как все бабушки отлично помнят день рождения своего внука/внучки и поздравляют с этим событием ежемесячно - мне никак не удавалось удержать это в памяти. Решил слегка автоматизировать процесс и заодно разобраться как работать с датами в Google Apps Script. И конечно же сделать, чтобы эта напоминалка появлялась заблаговременно, а не в день рождения малыша!
 ![Событие в календаре](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.png)
