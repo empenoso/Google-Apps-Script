@@ -28,8 +28,7 @@
  * https://productforums.google.com/forum/#!topic/calendar/B-i5hoBhTiw
  */
         
- 
-/* exported birthdayAgeToCalendar, anniversaryAgeToCalendar, TriggersCreateTimeDriven */
+ /* exported birthdayAgeToCalendar, anniversaryAgeToCalendar, TriggersCreateTimeDriven */
 
 // Глобальные переменные
 var contactsCal;
