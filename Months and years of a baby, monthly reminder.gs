@@ -20,6 +20,8 @@
  * Функция TriggersCreateTimeDriven создаст
  * автозапуск расчетов каждого 1го числа месяца.
  * 
+ * https://script.google.com/d/1JxcGYj9q5XldP5RaTzsiRgshGmR8_ElcjmcmKxmu4tRKPO9lwFMjK832/edit?usp=drive_web
+ *
  * На основе кода Eric Koleda
  * https://stackoverflow.com/questions/16149760/calculating-year-month-days-between-dates-in-google-apps-script/16928369
  */
