@@ -1,8 +1,8 @@
 My Google Apps Script :star::
 
-1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script#star-google-calendar_%D1%81alculates-a-persons-agegs-star)
+1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#1-google-calendar_%D1%81alculates-a-persons-agegs-underage)
 
-2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script#star-google-calendar_months-and-years-of-a-baby-monthly-remindergs-star)
+2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#2-google-calendar_months-and-years-of-a-baby-monthly-remindergs-baby)
 ___________
 # 1\. Google Calendar_Сalculates a person’s age.gs :underage:
 *Скрипт Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs), который создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре.*
