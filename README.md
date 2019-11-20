@@ -9,7 +9,7 @@ Read this in other languages: [English](README.md), [Русский язык](RE
 _____________
 
 # 1\. Google Calendar_Сalculates a person’s age.gs :underage:
-* Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs) which creates events (birthdays and anniversaries), indicating the past years in the calendar.
+Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs) which creates events (birthdays and anniversaries), indicating the past years in the calendar.
 
 As a user of an Android phone, I was not always happy with the fact that my calendar displayed the birthdays of contacts without indicating the age of a person. The same situation was with the anniversaries of contacts - there seems to be an anniversary, but it is not clear how much time has passed since this event. Looking through the contact’s details, finding the year of birth or the date of the anniversary, and then counting on something - there has never been time for this. I decided to simplify my life and wrote Google Apps Script, which first searches for these events in a special calendar that displays these events by default. And then, in the second step, it calculates the age for specific contacts and creates events in the main calendar. This script was published on the [Google Sheets Telegram channel (in Russian)](https://t.me/google_sheets/365).
 
