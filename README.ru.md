@@ -1,4 +1,4 @@
-My Google Apps Script :star::
+Мои гугл скрипты :star::
 
 1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#1-google-calendar_%D1%81alculates-a-persons-agegs-underage)
 
