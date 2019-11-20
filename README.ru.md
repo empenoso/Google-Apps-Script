@@ -8,20 +8,21 @@ Read this in other languages: [English](README.md), [Русский язык](RE
 
 __________
 
-# 1\. Google Calendar_Сalculates a person’s age.gs :underage:
-*Скрипт Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs), который создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре.*
+# 1\. Google Calendar_Birthdays and anniversaries with dates for your calendar.gs :underage:
+*[Google Apps Script](Google%20Calendar_Birthdays%20and%20anniversaries%20with%20dates%20for%20your%20calendar.gs), который создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре.*
 
 Меня, как пользователя телефона с системой Android, всегда не очень устраивал тот факт, что в моём календаре были обозначены дни рождения контактов, но без указания возраста человека.
 Также и с юбилеями контактов - вроде бы юбилей есть, а сколько времени прошло с этого события непонятно. Переходить в сам контакт и смотреть год рождения или дату юбилея, а потом что-то рассчитывать - на это времени никогда не было. Решил сам себе упростить жизнь и написал Google Apps Script, который сначала ищет эти события в специальном календаре, который по умолчанию выводит эти события. А затем на втором шаге рассчитывает возраст для конкретных контактов и уже создает события в основном календаре. Этот скрипт был опубликован в [Telegram-канале Google Таблицы](https://t.me/google_sheets/365).
 
-![Событие в календаре](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.png)
+![Google Calendar_Birthdays and anniversaries with dates for your calendar](Google%20Calendar_Birthdays%20and%20anniversaries%20with%20dates%20for%20your%20calendar.png)
 
-# 2\. Google Calendar_Months and years of a baby, monthly reminder.gs :baby:
-*Скрипт Google Apps Script [Months and years of a baby, monthly reminder.gs](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs), для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.*
+# 2\. Google Calendar_A child’s age in months and years, with a monthly reminder.gs :baby:
+*[Google Apps Script](Google%20Calendar_A%20child’s%20age%20in%20months%20and%20years%2C%20with%20a%20monthly%20reminder.gs), для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.*
 
 Это код, который облегчает жизнь молодым отцам - ведь в то время как все бабушки отлично помнят день рождения своего внука/внучки и поздравляют с этим событием ежемесячно - мне никак не удавалось удержать это в памяти. Решил слегка автоматизировать процесс и заодно разобраться как работать с датами в Google Apps Script. И конечно же сделать, чтобы эта напоминалка появлялась заблаговременно, а не в день рождения малыша! Этот скрипт был опубликован в [Telegram-канале Google Таблицы](https://t.me/google_sheets/435).
 
-![Событие в календаре](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.png)
+![Google Calendar_A child’s age in months and years, with a monthly reminder](Google%20Calendar_A%20child’s%20age%20in%20months%20and%20years%2C%20with%20a%20monthly%20reminder.png)
+
 ________
 Автор скриптов: Михаил Шардин
 
