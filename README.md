@@ -1,18 +1,17 @@
 My Google Apps Script :star::
 
-1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#1-google-calendar_%D1%81alculates-a-persons-agegs-underage)
+1\. [Birthdays and anniversaries with dates for the calendar](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#1-google-calendar_%D1%81alculates-a-persons-agegs-underage)
 
-2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#2-google-calendar_months-and-years-of-a-baby-monthly-remindergs-baby)
+2\. [Child’s months and years, monthly reminder](https://github.com/empenoso/Google-Apps-Script/blob/master/README.md#2-google-calendar_months-and-years-of-a-baby-monthly-remindergs-baby)
 
 Read this in other languages: [English](README.md), [Русский язык](README.ru.md).
 
 _____________
 
 # 1\. Google Calendar_Сalculates a person’s age.gs :underage:
-*Скрипт Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs), который создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре.*
+* Google Apps Script [Google Calendar_Сalculates a person’s age.gs](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.gs) which creates events (birthdays and anniversaries), indicating the past years in the calendar.
 
-Меня, как пользователя телефона с системой Android, всегда не очень устраивал тот факт, что в моём календаре были обозначены дни рождения контактов, но без указания возраста человека.
-Также и с юбилеями контактов - вроде бы юбилей есть, а сколько времени прошло с этого события непонятно. Переходить в сам контакт и смотреть год рождения или дату юбилея, а потом что-то рассчитывать - на это времени никогда не было. Решил сам себе упростить жизнь и написал Google Apps Script, который сначала ищет эти события в специальном календаре, который по умолчанию выводит эти события. А затем на втором шаге рассчитывает возраст для конкретных контактов и уже создает события в основном календаре. Этот скрипт был опубликован в [Telegram-канале Google Таблицы](https://t.me/google_sheets/365).
+As a user of an Android phone, I was not always happy with the fact that my calendar displayed the birthdays of contacts without indicating the age of a person. The same situation was with the anniversaries of contacts - there seems to be an anniversary, but it is not clear how much time has passed since this event. Looking through the contact’s details, finding the year of birth or the date of the anniversary, and then counting on something - there has never been time for this. I decided to simplify my life and wrote Google Apps Script, which first searches for these events in a special calendar that displays these events by default. And then, in the second step, it calculates the age for specific contacts and creates events in the main calendar. This script was published on the [Google Sheets Telegram channel (in Russian)](https://t.me/google_sheets/365).
 
 ![Событие в календаре](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.png)
 
