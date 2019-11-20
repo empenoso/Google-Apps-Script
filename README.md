@@ -16,7 +16,7 @@ As a user of an Android phone, I was not always happy with the fact that my cale
 ![Событие в календаре](/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.png)
 
 # 2\. Google Calendar_Months and years of a baby, monthly reminder.gs :baby:
-*Скрипт Google Apps Script [Months and years of a baby, monthly reminder.gs](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs) is great for all young fathers - it shows how many months and years the child is old, with a monthly reminder.*
+*Google Apps Script [Months and years of a baby, monthly reminder.gs](/Google%20Calendar_Months%20and%20years%20of%20a%20baby%2C%20monthly%20reminder.gs) is great for all young fathers - it shows how many months and years the child is old, with a monthly reminder.*
 
 This is a code that makes life easier for young fathers - because while all the grandmothers perfectly remember their grandson’s/granddaughter’s birthday and congratulate on this event every month - I could not keep it in my memory. I decided to slightly automate the process and at the same time figure out how to work with dates in Google Apps Script. And of course, to make this reminder appear in advance, and not on the baby’s birthday! This script was published on the [Google Sheets Telegram channel (in Russian)](https://t.me/google_sheets/435).
 
@@ -24,6 +24,6 @@ This is a code that makes life easier for young fathers - because while all the 
 
 ________
 
-Script author: Mikhail Shardin
+Mikhail Shardin
 
 https://www.facebook.com/mikhail.shardin
