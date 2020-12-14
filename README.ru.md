@@ -26,4 +26,4 @@ __________
 ________
 Автор скриптов: Михаил Шардин
 
-https://www.facebook.com/mikhail.shardin
+https://shardin.name/
