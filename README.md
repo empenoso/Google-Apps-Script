@@ -25,5 +25,4 @@ This is a code that makes life easier for young fathers - because while all the 
 ________
 
 Mikhail Shardin
-
-https://www.facebook.com/mikhail.shardin
+https://shardin.name/
