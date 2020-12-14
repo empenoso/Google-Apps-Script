@@ -1,6 +1,6 @@
 /*
  * Для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.
- * (c) 2019.10 Mikhail Shardin <mikhail.shardin@gmail.com>, https://www.facebook.com/mikhail.shardin
+ * (c) 2019.10 Mikhail Shardin, https://shardin.name/
  *
  * Написал код, который облегчает жизнь молодым отцам.
  * Ведь в то время как все бабушки отлично помнят день
