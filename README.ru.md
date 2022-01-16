@@ -1,6 +1,6 @@
 Мои гугл скрипты :star::
 
-1\. [Дни рождения и юбилеи с датами в календарь](https://github.com/empenoso/Google-Apps-Script/blob/master/README.ru.md#1-google-calendar_birthdays-and-anniversaries-with-dates-for-your-calendargs-underage)
+1\. [Дни рождения и юбилеи с датами в календарь](#google-calendar_birthdaysgs-underage)
 
 2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script/blob/master/README.ru.md#2-google-calendar_a-childs-age-in-months-and-years-with-a-monthly-remindergs-baby)
 
