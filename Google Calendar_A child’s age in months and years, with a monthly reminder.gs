@@ -1,6 +1,7 @@
 /*
  * Для всех молодых отцов - сколько месяцев и годов ребенку отроду, ежемесячная напоминалка.
- * (c) 2019.10 Mikhail Shardin, https://shardin.name/
+ * A child’s age in months and years, with a monthly reminder
+ * (c) 2019.10 Mikhail Shardin https://shardin.name/
  *
  * Написал код, который облегчает жизнь молодым отцам.
  * Ведь в то время как все бабушки отлично помнят день
@@ -20,6 +21,7 @@
  * Функция TriggersCreateTimeDriven создаст
  * автозапуск расчетов каждого 1го числа месяца.
  * 
+ * Дополнительные инструкции: https://github.com/empenoso/Google-Apps-Script/ 
  * https://script.google.com/d/1JxcGYj9q5XldP5RaTzsiRgshGmR8_ElcjmcmKxmu4tRKPO9lwFMjK832/edit?usp=drive_web
  *
  * На основе кода Eric Koleda
