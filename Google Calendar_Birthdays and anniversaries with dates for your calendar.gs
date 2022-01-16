@@ -1,6 +1,7 @@
 /*
  * Создает события (дни рождения и юбилеи) с указанием прошедших лет в календаре
- * (c) 2019.03 Mikhail Shardin, https://shardin.name/
+ * Birthdays and anniversaries with dates for your Google Calendar
+ * (c) 2019.03 Mikhail Shardin https://shardin.name/
  * 
  * Меня, как пользователя телефона с системой Android, всегда не очень устраивал тот факт, 
  * что в моём календаре были обозначены дни рождения контактов, но без указания возраста человека.
@@ -9,9 +10,9 @@
  * Решил сам себе упростить жизнь и написал Google Apps Script, который сначала ищет эти события в специальном календаре, 
  * который по умолчанию выводит эти события. А зачем на втором шаге рассчитывает возраст для конкретных контактов и уже создает события в основном календаре. 
  *
- * https://github.com/empenoso/Google-Apps-Script/blob/master/Google%20Calendar_%D0%A1alculates%20a%20person%E2%80%99s%20age.png
+ * Дополнительные инструкции: https://github.com/empenoso/Google-Apps-Script/
  * https://script.google.com/d/1oDswSXp_UleDXiTFushWnqziHi1Dlkb6x_neteWWKfEnjXttUUIPyRTd/edit?usp=sharing
- * UPD 26.03.2019: теперь с правками кода от Alexander Ivanov - https://github.com/contributorpw/
+ * UPD 04.2019: теперь с правками кода от Alexander Ivanov - https://github.com/contributorpw/
  * 
  * Для начала работы Файл/Создать копию и выполнить TriggersCreateTimeDriven - создаст автозапуск каждого 1го числа месяца и делает расчет на 31 день вперед
  *
