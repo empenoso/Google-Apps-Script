@@ -2,7 +2,7 @@
 
 1\. [Дни рождения и юбилеи с датами в календарь](#google-calendar_birthdaysgs-underage)
 
-2\. [Месяцы и годы ребенка, ежемесячная напоминалка](https://github.com/empenoso/Google-Apps-Script/blob/master/README.ru.md#2-google-calendar_a-childs-age-in-months-and-years-with-a-monthly-remindergs-baby)
+2\. [Месяцы и годы ребенка, ежемесячная напоминалка](#google-calendar_a-childs-age_v1gs-baby)
 
 Read this in other languages: [English](README.md), [Русский язык](README.ru.md).
 
