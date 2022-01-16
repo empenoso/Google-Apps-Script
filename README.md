@@ -4,7 +4,7 @@ My Google Apps Script :star::
 
 2\. [A child’s age in months and years, with a monthly reminder](#google-calendar_a-childs-age_v1gs-baby)
 
-Read this in other languages: [English](README.md), [Русский язык](README.ru.md).
+Read this in other languages: [на русском языке](README.ru.md).
 
 _____________
 
