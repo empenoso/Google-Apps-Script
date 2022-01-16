@@ -4,7 +4,7 @@
 
 2\. [Месяцы и годы ребенка, ежемесячная напоминалка](#google-calendar_a-childs-age_v1gs-baby)
 
-Read this in other languages: [English](README.md), [Русский язык](README.ru.md).
+Read this in other languages: [English](README.md).
 
 __________
 
