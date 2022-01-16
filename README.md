@@ -2,7 +2,7 @@ My Google Apps Script :star::
 
 1\. [Birthdays and anniversaries with dates for your calendar](#google-calendar_birthdaysgs-underage)
 
-2\. [A child’s age in months and years, with a monthly reminder](#google-calendar_a-childs-age_v1gs-baby)
+2\. [A child’s age in months and years, with a monthly reminder v1](#google-calendar_a-childs-age_v1gs-baby)
 
 Read this in other languages: [на русском языке](README.ru.md).
 
