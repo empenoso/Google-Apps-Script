@@ -16,7 +16,7 @@ As a user of an Android phone, I was not always happy with the fact that my cale
 
 ![Google Calendar_Birthdays and anniversaries with dates for your calendar](Google%20Calendar_Birthdays.png)
 
-# Google Calendar_A child’s age in months and years, with a monthly reminder.gs :baby:
+# Google Calendar_A child’s age_v1.gs :baby:
 
 *[Google Apps Script](Google%20Calendar_A%20child’s%20age_v1.gs) is great for all young fathers - it shows how many months and years the child is old, with a monthly reminder.*
 
