@@ -10,7 +10,7 @@
  * Решил сам себе упростить жизнь и написал Google Apps Script, который сначала ищет эти события в специальном календаре, 
  * который по умолчанию выводит эти события. А зачем на втором шаге рассчитывает возраст для конкретных контактов и уже создает события в основном календаре. 
  *
- * Дополнительные инструкции: https://github.com/empenoso/Google-Apps-Script/
+ * Дополнительные инструкции: https://habr.com/ru/post/481858/
  * https://script.google.com/d/1oDswSXp_UleDXiTFushWnqziHi1Dlkb6x_neteWWKfEnjXttUUIPyRTd/edit?usp=sharing
  * UPD 04.2019: теперь с правками кода от Alexander Ivanov - https://github.com/contributorpw/
  * 
