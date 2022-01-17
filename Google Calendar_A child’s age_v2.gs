@@ -2,7 +2,8 @@
  * Скрипт, который ежемесячно создаёт событие в гугл календаре, в котором точно указан возраст ребенка, а также значимые события из жизни родителей
  * (c) 2022.01. Mikhail Shardin https://shardin.name/
  * 
- * Дополнительные инструкции: https://github.com/empenoso/Google-Apps-Script/ 
+ * Дополнительные инструкции: https://habr.com/ru/post/645935/
+ * Исходное размещение: https://github.com/empenoso/Google-Apps-Script/ 
  */
 
 function AddCalendarCurrentAge() { //вычисляем значимые даты и добавляем всё это в выбраный календарь
