@@ -60,9 +60,9 @@ function TriggersCreateTimeDriven() { //автоматически создае�
 
 //=================================================================================================
 
-function get_calendars() { //получить список идентификаторов всех доступных календарей
+function getCalendars() { //получить список идентификаторов всех доступных календарей
     var calendars = CalendarApp.getAllCalendars();
-    Logger.log('This user owns or is subscribed to %s calendars.', calendars.length);
+    Logger.log('Этот пользователь подписан на %s календарей:', calendars.length);
     for (var i = 0; i < calendars.length; i++) {
         var calendar = calendars[i];
         Logger.log((i + 1) + 'й календарь: "' + calendar.getName() + '",\n ID: "' + calendar.getId() + '"\n');
