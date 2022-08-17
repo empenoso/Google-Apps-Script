@@ -23,19 +23,19 @@ function AddCalendarCurrentAge() {
     var now = moment().add(offset, 'days');
 
     // Данные о рождении папы. Вычисляем возраст папы: полных лет, месяцев
-    const fatherBirthday = '1994-05-15'
+    const fatherBirthday = '1984-05-15'
     var fatherFullYears = ~~(moment(now).diff(fatherBirthday, 'months', false) / 12);
     var fathermonth = (moment().diff(fatherBirthday, 'months', false) - fatherFullYears * 12);
     fatherText = "Папа родился " + fatherFullYears + ' ' + textYear(fatherFullYears) + ' ' + "и " + fathermonth + ' ' + textMonth(fathermonth) + ' ' + "назад. ";
 
     // Данные о рождении мамы. Вычисляем возраст мамы: полных лет, месяцев
-    const motherBirthday = '1998-04-18'
+    const motherBirthday = '1991-04-18'
     var motherFullYears = ~~(moment(now).diff(motherBirthday, 'months', false) / 12);
     var mothermonth = (moment().diff(motherBirthday, 'months', false) - motherFullYears * 12);
     motherText = "Мама родилась " + motherFullYears + ' ' + textYear(motherFullYears) + ' ' + "и " + mothermonth + ' ' + textMonth(mothermonth) + ' ' + "назад. ";
 
     // Данные о рождении ребёнка. Вычисляем возраст ребёнка: полных лет, месяцев
-    const childBirthday = '2020-04-07'
+    const childBirthday = '2016-04-07'
     var childFullYears = ~~(moment(now).diff(childBirthday, 'months', false) / 12);
     var childmonth = (moment().diff(childBirthday, 'months', false) - childFullYears * 12);
     childText = "Ребёнок родился " + childFullYears + ' ' + textYear(childFullYears) + ' ' + "и " + childmonth + ' ' + textMonth(childmonth) + ' ' + "назад. ";
@@ -46,7 +46,7 @@ function AddCalendarCurrentAge() {
     var relationshipFullYears = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) / 12);
     var relationshipmonth = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) - relationshipFullYears * 12);
     var freeFullYears = ~~(moment().diff(relationshipEnd, 'months', false) / 12)
-    relationshipText = "Отношениям папы и мамы " + relationshipFullYears + ' ' + textYear(relationshipFullYears) + ' ' + "и " + relationshipmonth + ' ' + textMonth(relationshipmonth) + ` (с ${relationshipStart} по ${relationshipEnd}).` 
+    relationshipText = "Отношениям папы и мамы " + relationshipFullYears + ' ' + textYear(relationshipFullYears) + ' ' + "и " + relationshipmonth + ' ' + textMonth(relationshipmonth) + ` (с ${relationshipStart} по ${relationshipEnd}).`
     //    + `\n\nУже ${freeFullYears} лет ${moment().diff(relationshipEnd, 'months', false)-freeFullYears*12} месяцев родители живут порознь.`
 
     Logger.log(childText + '\n' + fatherText + '\n' + motherText + '\n' + relationshipText);
@@ -68,6 +68,8 @@ function AddCalendarCurrentAge() {
     // event.addPopupReminder(24 * 60 * 1 - 9 * 60); // за 1 день в 09:00
     event.addPopupReminder(4 * 60); // за 1 день в 20:00
     // event.addPopupReminder(0); // в тот же день в  00:00
+
+    logToDrive(); //создаем файл лога на Гугл диске 
 }
 
 // Получаем список идентификаторов всех доступных календарей
@@ -131,4 +133,34 @@ function TriggersCreateTimeDriven() {
         .onMonthDay(1) //триггер на 1й день месяца
         .atHour(2)
         .create();
+}
+
+function logToDrive() { //создаем файл лога на диске    
+    var id = ScriptApp.getScriptId();
+    var name = DriveApp.getFileById(id).getName();
+    // определяем имя папки - начало
+    var file = DriveApp.getFileById(id);
+    var folders = file.getParents();
+    while (folders.hasNext()) {
+        var folder_name = folders.next().getName();
+        Logger.log("logToDrive. Имя папки: " + folder_name)
+    }
+    // определяем имя папки - конец
+    var fileName = name + "_GoogleAppsLog.txt";
+    try {
+        var dir = DriveApp.getFoldersByName(folder_name).next(); //если в какой-то папке
+    } catch (error) {
+        var dir = DriveApp.getRootFolder(); //если корень диска
+    }
+
+    var files = dir.getFiles();
+    while (files.hasNext()) {
+        var file = files.next();
+        Logger.log("logToDrive. Файлы в папке: " + file.getName())
+        if (file.getName() === fileName) {
+            file.setTrashed(true); //удаляем предыдущий лог файл
+            break;
+        }
+    }
+    var file = dir.createFile(fileName, Logger.getLog()); //создаем лог файл
 }
