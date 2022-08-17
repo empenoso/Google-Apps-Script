@@ -5,7 +5,7 @@
  * 
  * Этот скрипт модификация моего скрипта 2019 года: https://habr.com/ru/post/481858/
  *
- * Спасибо @Sergey_050krd (это ссылка на телеграм) за склонение год, лет, года и прочие мелочи.
+ * Спасибо @Sergey_050krd (это ссылка на телеграм) за склонение год, лет, года и создание комментариев.
  *
  */
 
@@ -56,35 +56,16 @@ function birthdayAgeToCalendar() {
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
-
-            // Склоняем окончание согласно возраста (лет, год, года) для дней рождения
-            function text(age) {
-                var years;
-                count = age % 100;
-                if (count >= 5 && count <= 20) {
-                    years = 'лет';
-                } else {
-                    count = count % 10;
-                    if (count == 1) {
-                        years = 'год';
-                    } else if (count >= 2 && count <= 4) {
-                        years = 'года';
-                    } else {
-                        years = 'лет';
-                    }
-                }
-                return years;
-            }
-            Logger.log('birthdayAgeToCalendar. Дни рождения. Name: ' + name + ', ' + years + ' ' + text(years) + '.');
+            Logger.log('birthdayAgeToCalendar. Дни рождения. ' + name + ', ' + years + ' ' + text(years) + '.');
         }
-
-        // Получаем номер телефона контакта для дней рождения. Необходимо чтобы у контакта (именинника) он был записан в формате +7 918 123-45-67 и обязательно стоял ярлык мобильный или мобильное устройство
-        var contacts = ContactsApp.getContactsByName(name);
-        var phones = contacts[0].getPhones(ContactsApp.Field.MOBILE_PHONE); // https://developers.google.com/apps-script/reference/contacts/field?hl=en                
 
         // Заголовок уведомления для дней рождения
         // Если задан номер мобильного телефона
         try {
+            // Получаем номер телефона контакта для дней рождения. Необходимо чтобы у контакта (именинника) он был записан в формате +7 918 123-45-67 и обязательно стоял ярлык мобильный или мобильное устройство
+            var contacts = ContactsApp.getContactsByName(name);
+            var phones = contacts[0].getPhones(ContactsApp.Field.MOBILE_PHONE); // https://developers.google.com/apps-script/reference/contacts/field?hl=en                
+
             var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
                 new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
                     // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
@@ -95,7 +76,7 @@ function birthdayAgeToCalendar() {
             // Если мобильного телефона нет или указан в неправильном формате
         } catch (e) {
             e = e.message.replace(/\s/g, '+').replace(/\'/g, '')
-            console.log(`Мобильного телефона нет или указан в неправильном формате, пропускаем в ${new Date().toLocaleTimeString()} с ошибкой: "https://www.google.ru/search?ie=UTF-8&q=javascript+${e}".`)
+            console.log(`birthdayAgeToCalendar. Мобильного телефона нет или указан в неправильном формате, пропускаем в ${new Date().toLocaleTimeString()} с ошибкой: "https://www.google.ru/search?ie=UTF-8&q=javascript+${e}".`)
             var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
                 new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
                     // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
@@ -122,7 +103,7 @@ function anniversaryAgeToCalendar() {
         Logger.log('anniversaryAgeToCalendar. Юбилеи. Найдено: ' + events[i].getTitle());
         var name = events[i].getTitle().split("Юбилей у пользователя ")[1];
         var contacts = ContactsApp.getContactsByName(name);
-        Logger.log('anniversaryAgeToCalendar. юбилеи. Name: ' + name);
+        Logger.log('anniversaryAgeToCalendar. Юбилеи. Name: ' + name);
 
         for (var c in contacts) {
             var bday = contacts[c].getDates(ContactsApp.Field.ANNIVERSARY);
@@ -135,54 +116,55 @@ function anniversaryAgeToCalendar() {
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
-
-            // Склоняем окончание согласно возраста (лет, год, года) для говщин (юбилеев)
-            function text(age) {
-                var years;
-                count = age % 100;
-                if (count >= 5 && count <= 20) {
-                    years = 'лет';
-                } else {
-                    count = count % 10;
-                    if (count == 1) {
-                        years = 'год';
-                    } else if (count >= 2 && count <= 4) {
-                        years = 'года';
-                    } else {
-                        years = 'лет';
-                    }
-                }
-                return years;
-            }
-            console.log(name + ' ' + years + ' ' + text(years));
+            Logger.log('birthdayAgeToCalendar. Юбилеи. ' + name + ', ' + years + ' ' + text(years) + '.');
         }
+
         // Заголовок уведомления для говщин, юбилеев
-        var event = defaultCal.createAllDayEvent("Сегодня юбилей у " + name + ", " + years + " " + text(years),
-            new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
-                // Устанавливаем локацию для говщин, юбилеев (можно отредактировать под себя)
-                // location: " The Moon ", 
+        try {
+            var event = defaultCal.createAllDayEvent("Сегодня юбилей у " + name + ", " + years + " " + text(years),
+                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                    // Устанавливаем локацию для говщин, юбилеев (можно отредактировать под себя)
+                    location: "Пермь",
+                    // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
+                    description: "Сегодня юбилей у " + name + " - " + years + " " + text(years) + "!!!\n\nС памятной датой!\n☎️ "
+                });
 
-                // Устанавливаем описание события для говщин, юбилеев с номером телефона (можно отредактировать под себя)
-                description: "Сегодня юбилей у " + name + " - " + years + " " + text(years) + " !!! \n Не забудьте поздравить 🎂💐🎉  \n ☎️ " + phones[i].getPhoneNumber() + ""
-
-                // Устанавливаем описание события для говщин, юбилеев без номера телефона (можно отредактировать под себя)
-                // description: "Сегодня юбилей у " + name + " - "+years+" "+text(years)+" !!! \n Не забудьте поздравить 🎂💐🎉"
-            });
+            // Устанавливаем время уведомлений для говщин, юбилеев
+            event.addPopupReminder(0 - 24 * 60); // В день события в 00:00
+            event.addPopupReminder(24 * 60 * 1 - 9 * 60); // За день в 09:00
+            // event.addPopupReminder(24 * 60 * 2 - 9 * 60); // За 2 дня в 09:00
+        } catch (e) {
+            e = e.message.replace(/\s/g, '+').replace(/\'/g, '')
+            console.log(`anniversaryAgeToCalendar. Юбилея или особой даты нет у пользователя нет, пропускаем в ${new Date().toLocaleTimeString()} с ошибкой: "https://www.google.ru/search?ie=UTF-8&q=javascript+${e}".`)
+        }
 
         // Устанавливаем любой цвет для события говщин, юбилеев
-        // event.setColor(CalendarApp.EventColor.RED); 
-
-        // Устанавливаем время уведомлений для говщин, юбилеев
-        event.addPopupReminder(0 - 24 * 60); // В день события в 00:00
-        event.addPopupReminder(24 * 60 * 1 - 9 * 60); // За день в 09:00
-        // event.addPopupReminder(24 * 60 * 2 - 9 * 60); // За 2 дня в 09:00
+        // event.setColor(CalendarApp.EventColor.RED);         
     }
     logToDrive(); //создаем файл лога на Гугл диске 
 }
 
+// Склоняем окончание согласно возраста (лет, год, года) для дней рождения
+function text(age) {
+    var years;
+    count = age % 100;
+    if (count >= 5 && count <= 20) {
+        years = 'лет';
+    } else {
+        count = count % 10;
+        if (count == 1) {
+            years = 'год';
+        } else if (count >= 2 && count <= 4) {
+            years = 'года';
+        } else {
+            years = 'лет';
+        }
+    }
+    return years;
+}
+
 // Автоматически создаем новые триггеры для запуска
 function TriggersCreateTimeDriven() {
-
     // Удаляет все триггеры в текущем проекте
     var triggers = ScriptApp.getProjectTriggers();
     for (var i = 0; i < triggers.length; i++) {
