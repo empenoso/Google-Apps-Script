@@ -18,34 +18,36 @@ function AddCalendarCurrentAge() {
     moment.locale('ru');
 
     // Триггер из TriggersCreateTimeDriven работает в 1-й день месяца, но сам день рождения ведь в другой день, 
-    // то есть если день рождения ребёнка 9 числа, то offset = 9
-    const offset = 5;
+    // то есть если день рождения ребёнка 9 числа, то offset = 8
+    const offset = 6;
     var now = moment().add(offset, 'days');
 
     // Данные о рождении папы. Вычисляем возраст папы: полных лет, месяцев
-    const fatherBirthday = '1999-04-22'
+    const fatherBirthday = '1994-05-15'
     var fatherFullYears = ~~(moment(now).diff(fatherBirthday, 'months', false) / 12);
     var fathermonth = (moment().diff(fatherBirthday, 'months', false) - fatherFullYears * 12);
-    fatherText = "Папа родился " + fatherFullYears + ' ' + textYear(fatherFullYears) + ' ' + "и " + fathermonth + ' ' + textMonth(fathermonth) + ' ' + "назад";
+    fatherText = "Папа родился " + fatherFullYears + ' ' + textYear(fatherFullYears) + ' ' + "и " + fathermonth + ' ' + textMonth(fathermonth) + ' ' + "назад. ";
 
     // Данные о рождении мамы. Вычисляем возраст мамы: полных лет, месяцев
-    const motherBirthday = '2000-11-16'
+    const motherBirthday = '1998-04-18'
     var motherFullYears = ~~(moment(now).diff(motherBirthday, 'months', false) / 12);
     var mothermonth = (moment().diff(motherBirthday, 'months', false) - motherFullYears * 12);
-    motherText = "Мама родилась " + motherFullYears + ' ' + textYear(motherFullYears) + ' ' + "и " + mothermonth + ' ' + textMonth(mothermonth) + ' ' + "назад";
+    motherText = "Мама родилась " + motherFullYears + ' ' + textYear(motherFullYears) + ' ' + "и " + mothermonth + ' ' + textMonth(mothermonth) + ' ' + "назад. ";
 
     // Данные о рождении ребёнка. Вычисляем возраст ребёнка: полных лет, месяцев
     const childBirthday = '2020-04-07'
     var childFullYears = ~~(moment(now).diff(childBirthday, 'months', false) / 12);
     var childmonth = (moment().diff(childBirthday, 'months', false) - childFullYears * 12);
-    childText = "Ребёнок родился " + childFullYears + ' ' + textYear(childFullYears) + ' ' + "и " + childmonth + ' ' + textMonth(childmonth) + ' ' + "назад";
+    childText = "Ребёнок родился " + childFullYears + ' ' + textYear(childFullYears) + ' ' + "и " + childmonth + ' ' + textMonth(childmonth) + ' ' + "назад. ";
 
-    // Данные о начале отношений. Вычисляем: полных лет, месяцев
-    const relationshipStart = '2016-04-15'
-    const relationshipEnd = moment().format('YYYY-MM-DD');
+    // Данные об отношених. Вычисляем: полных лет, месяцев
+    const relationshipStart = '2011-06-16'
+    const relationshipEnd = moment().format('YYYY-MM-DD'); // или поставьте дату :(
     var relationshipFullYears = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) / 12);
     var relationshipmonth = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) - relationshipFullYears * 12);
-    relationshipText = "Отношениям папы и мамы " + relationshipFullYears + ' ' + textYear(relationshipFullYears) + ' ' + "и " + relationshipmonth + ' ' + textMonth(relationshipmonth);
+    var freeFullYears = ~~(moment().diff(relationshipEnd, 'months', false) / 12)
+    relationshipText = "Отношениям папы и мамы " + relationshipFullYears + ' ' + textYear(relationshipFullYears) + ' ' + "и " + relationshipmonth + ' ' + textMonth(relationshipmonth) + ` (с ${relationshipStart} по ${relationshipEnd}).` 
+    //    + `\n\nУже ${freeFullYears} лет ${moment().diff(relationshipEnd, 'months', false)-freeFullYears*12} месяцев родители живут порознь.`
 
     Logger.log(childText + '\n' + fatherText + '\n' + motherText + '\n' + relationshipText);
 
@@ -58,11 +60,11 @@ function AddCalendarCurrentAge() {
     var title = `Сегодня ребёнку исполняется ${childFullYears} ${textYear(childFullYears)} и ${moment().diff(childBirthday, 'months', false)-childFullYears*12} ${textMonth(childmonth)}`;
     var event = defaultCal.createAllDayEvent(title,
         new Date(now), {
-            // location: "58.0100442,56.2275679",
+            // location: "Пермь",
             description: fatherText + '\n' + motherText + '\n\n' + relationshipText
         });
     event.setColor(CalendarApp.EventColor.RED);
-    event.addPopupReminder(24 * 60 * 2 - 9 * 60); // за 2 дня в 09:00
+    // event.addPopupReminder(24 * 60 * 2 - 9 * 60); // за 2 дня в 09:00
     // event.addPopupReminder(24 * 60 * 1 - 9 * 60); // за 1 день в 09:00
     event.addPopupReminder(4 * 60); // за 1 день в 20:00
     // event.addPopupReminder(0); // в тот же день в  00:00
