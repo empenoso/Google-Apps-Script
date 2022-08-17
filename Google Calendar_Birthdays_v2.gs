@@ -40,10 +40,10 @@ var events;
 // Дни рождения
 function birthdayAgeToCalendar() {
     for (var i in events) {
-        Logger.log('birthdayAgeToCalendar. дни рождения. Найдено: ' + events[i].getTitle());
+        Logger.log('birthdayAgeToCalendar. Дни рождения. Найдено: ' + events[i].getTitle());
         var name = events[i].getTitle().split(" – день рождения")[0];
         var contacts = ContactsApp.getContactsByName(name);
-        Logger.log('birthdayAgeToCalendar. дни рождения. Name: ' + name);
+        // Logger.log('birthdayAgeToCalendar. Дни рождения. Name: ' + name);
 
         for (var c in contacts) {
             var bday = contacts[c].getDates(ContactsApp.Field.BIRTHDAY);
@@ -52,7 +52,7 @@ function birthdayAgeToCalendar() {
                 bdayMonthName = bday[0].getMonth();
                 bdayYear = bday[0].getYear();
                 bdayDate = new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + bdayYear);
-                Logger.log('birthdayAgeToCalendar. bdayDate: ' + bdayDate);
+                // Logger.log('birthdayAgeToCalendar. bdayDate: ' + bdayDate);
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
@@ -75,29 +75,35 @@ function birthdayAgeToCalendar() {
                 }
                 return years;
             }
-            console.log(name + ' ' + years + ' ' + text(years));
+            Logger.log('birthdayAgeToCalendar. Дни рождения. Name: ' + name + ', ' + years + ' ' + text(years) + '.');
         }
 
         // Получаем номер телефона контакта для дней рождения. Необходимо чтобы у контакта (именинника) он был записан в формате +7 918 123-45-67 и обязательно стоял ярлык мобильный или мобильное устройство
         var contacts = ContactsApp.getContactsByName(name);
-        var phones = contacts[0].getPhones(ContactsApp.Field.MOBILE_PHONE);
-        Logger.log(JSON.stringify(phones))
-        for (var i in phones) {
-            Logger.log(phones[i].getPhoneNumber())
+        var phones = contacts[0].getPhones(ContactsApp.Field.MOBILE_PHONE); // https://developers.google.com/apps-script/reference/contacts/field?hl=en                
+
+        // Заголовок уведомления для дней рождения
+        // Если задан номер мобильного телефона
+        try {
+            var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
+                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                    // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
+                    location: "Пермь",
+                    // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
+                    description: "Сегодня " + name + " празднует день рождения - " + years + " " + text(years) + "!!!\n\nС Днём Рождения! 🎂🎁🙂🎈💃🕺\n☎️ " + phones[i].getPhoneNumber() + ""
+                });
+            // Если мобильного телефона нет или указан в неправильном формате
+        } catch (e) {
+            e = e.message.replace(/\s/g, '+').replace(/\'/g, '')
+            console.log(`Мобильного телефона нет или указан в неправильном формате, пропускаем в ${new Date().toLocaleTimeString()} с ошибкой: "https://www.google.ru/search?ie=UTF-8&q=javascript+${e}".`)
+            var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
+                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                    // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
+                    location: "Пермь",
+                    // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
+                    description: "Сегодня " + name + " празднует день рождения - " + years + " " + text(years) + "!!!\n\nС Днём Рождения! 🎂🎁🙂🎈💃🕺"
+                });
         }
-
-        // Заголовок уведомления для дней рождения 
-        var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
-            new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
-                // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
-                // location: " The Moon ", 
-
-                // Устанавливаем описание события для дней рождения с номером телефона (можно отредактировать под себя)
-                description: "Сегодня " + name + " празднует день рождения - " + years + " " + text(years) + " !!! \n Не забудьте поздравить 🎂💐🎉  \n ☎️ " + phones[i].getPhoneNumber() + ""
-
-                // Устанавливаем описание события для дней рождения без номера телефона (можно отредактировать под себя)
-                // description: "Сегодня " + name + " празднует день рождения - " + years + " " + text(years) + " !!! \n Не забудьте поздравить 🎂💐🎉"
-            });
 
         // Устанавливаем любой цвет для события дней рождения
         // event.setColor(CalendarApp.EventColor.RED); 
@@ -125,7 +131,7 @@ function anniversaryAgeToCalendar() {
                 bdayMonthName = bday[0].getMonth();
                 bdayYear = bday[0].getYear();
                 bdayDate = new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + bdayYear);
-                Logger.log('anniversaryAgeToCalendar. bdayDate: ' + bdayDate);
+                // Logger.log('anniversaryAgeToCalendar. bdayDate: ' + bdayDate);
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
