@@ -24,25 +24,25 @@ function AddCalendarCurrentAge() {
     var now = moment().add(offset, 'days');
 
     // Данные о рождении папы. Вычисляем возраст папы: полных лет, месяцев
-    const fatherBirthday = '1984-05-15'
+    const fatherBirthday = '1994-05-15'
     var fatherFullYears = ~~(moment(now).diff(fatherBirthday, 'months', false) / 12);
     var fathermonth = (moment().diff(fatherBirthday, 'months', false) - fatherFullYears * 12);
     fatherText = "Папа родился " + fatherFullYears + ' ' + textYear(fatherFullYears) + ' ' + "и " + fathermonth + ' ' + textMonth(fathermonth) + ' ' + "назад. ";
 
     // Данные о рождении мамы. Вычисляем возраст мамы: полных лет, месяцев
-    const motherBirthday = '1991-04-18'
+    const motherBirthday = '1996-04-18'
     var motherFullYears = ~~(moment(now).diff(motherBirthday, 'months', false) / 12);
     var mothermonth = (moment().diff(motherBirthday, 'months', false) - motherFullYears * 12);
     motherText = "Мама родилась " + motherFullYears + ' ' + textYear(motherFullYears) + ' ' + "и " + mothermonth + ' ' + textMonth(mothermonth) + ' ' + "назад. ";
 
     // Данные о рождении ребёнка. Вычисляем возраст ребёнка: полных лет, месяцев
-    const childBirthday = '2016-04-07'
+    const childBirthday = '2020-04-07'
     var childFullYears = ~~(moment(now).diff(childBirthday, 'months', false) / 12);
     var childmonth = (moment().diff(childBirthday, 'months', false) - childFullYears * 12);
     childText = "Ребёнок родился " + childFullYears + ' ' + textYear(childFullYears) + ' ' + "и " + childmonth + ' ' + textMonth(childmonth) + ' ' + "назад. ";
 
     // Данные об отношених. Вычисляем: полных лет, месяцев
-    const relationshipStart = '2011-06-16'
+    const relationshipStart = '2017-06-16'
     const relationshipEnd = moment().format('YYYY-MM-DD'); // или поставьте дату :(
     var relationshipFullYears = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) / 12);
     var relationshipmonth = ~~(moment(relationshipEnd).diff(relationshipStart, 'months', false) - relationshipFullYears * 12);
