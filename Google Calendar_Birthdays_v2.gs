@@ -3,9 +3,6 @@
  * Displaying birthday and age in Google's Calendar
  * (c) 2022 Mikhail Shardin https://shardin.name/
  * 
- * Инструкции как пользоваться: https://habr.com/ru/post/683188/
- * Актуальная версия: https://github.com/empenoso/Google-Apps-Script/
- *
  * Этот скрипт модификация моей версии 2019 года: https://habr.com/ru/post/481858/
  *
  * Спасибо @Sergey_050krd (это ссылка на телеграм) за склонение год, лет, года и создание комментариев.
@@ -53,9 +50,10 @@ function birthdayAgeToCalendar() {
             var bdayMonthName, bdayYear, bdayDate;
             try {
                 bdayMonthName = bday[0].getMonth();
+                bdayDay = bday[0].getDay()
                 bdayYear = bday[0].getYear();
-                bdayDate = new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + bdayYear);
-                // Logger.log('birthdayAgeToCalendar. bdayDate: ' + bdayDate);
+                bdayDate = new Date(bdayMonthName + ' ' + bdayDay + ', ' + bdayYear);
+                // Logger.log('birthdayAgeToCalendar. bdayDate: ' + bdayMonthName + ' ' + bdayDay + ', ' + bdayYear);
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
@@ -70,7 +68,7 @@ function birthdayAgeToCalendar() {
             var phones = contacts[0].getPhones(ContactsApp.Field.MOBILE_PHONE); // https://developers.google.com/apps-script/reference/contacts/field?hl=en                
 
             var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
-                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                new Date(bdayMonthName + ' ' + bdayDay + ', ' + new Date().getFullYear()), {
                     // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
                     location: "Пермь",
                     // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
@@ -81,7 +79,7 @@ function birthdayAgeToCalendar() {
             e = e.message.replace(/\s/g, '+').replace(/\'/g, '')
             console.log(`birthdayAgeToCalendar. Мобильного телефона нет или указан в неправильном формате, пропускаем в ${new Date().toLocaleTimeString()} с ошибкой: "https://www.google.ru/search?ie=UTF-8&q=javascript+${e}".`)
             var event = defaultCal.createAllDayEvent(name + " – день рождения, " + years + " " + text(years),
-                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                new Date(bdayMonthName + ' ' + bdayDay + ', ' + new Date().getFullYear()), {
                     // Устанавливаем локацию для дней рождения (можно отредактировать под себя)
                     location: "Пермь",
                     // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
@@ -113,9 +111,10 @@ function anniversaryAgeToCalendar() {
             var bdayMonthName, bdayYear, bdayDate;
             try {
                 bdayMonthName = bday[0].getMonth();
+                bdayDay = bday[0].getDay()
                 bdayYear = bday[0].getYear();
-                bdayDate = new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + bdayYear);
-                // Logger.log('anniversaryAgeToCalendar. bdayDate: ' + bdayDate);
+                bdayDate = new Date(bdayMonthName + ' ' + bdayDay + ', ' + bdayYear);
+                // Logger.log('birthdayAgeToCalendar. bdayDate: ' + bdayMonthName + ' ' + bdayDay + ', ' + bdayYear);
             } catch (error) {}
 
             var years = parseInt(new Date().getFullYear()) - bdayYear;
@@ -125,7 +124,7 @@ function anniversaryAgeToCalendar() {
         // Заголовок уведомления для говщин, юбилеев
         try {
             var event = defaultCal.createAllDayEvent("Сегодня юбилей у " + name + ", " + years + " " + text(years),
-                new Date(bdayMonthName + ' ' + bday[0].getDay() + ', ' + new Date().getFullYear()), {
+                new Date(bdayMonthName + ' ' + bdayDay + ', ' + new Date().getFullYear()), {
                     // Устанавливаем локацию для говщин, юбилеев (можно отредактировать под себя)
                     location: "Пермь",
                     // Устанавливаем описание события для дней рождения (можно отредактировать под себя)
