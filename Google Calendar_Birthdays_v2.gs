@@ -3,6 +3,9 @@
  * Displaying birthday and age in Google's Calendar
  * (c) 2022 Mikhail Shardin https://shardin.name/
  * 
+ * Инструкции как пользоваться: https://habr.com/ru/post/683188/
+ * Актуальная версия: https://github.com/empenoso/Google-Apps-Script/
+ * 
  * Этот скрипт модификация моей версии 2019 года: https://habr.com/ru/post/481858/
  *
  * Спасибо @Sergey_050krd (это ссылка на телеграм) за склонение год, лет, года и создание комментариев.
