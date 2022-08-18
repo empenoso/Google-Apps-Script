@@ -4,11 +4,12 @@
  *
  * (c) 2022.08 Mikhail Shardin https://shardin.name/
  *
+ * Инструкции как пользоваться: https://habr.com/ru/post/683188/
+ * Актуальная версия: https://github.com/empenoso/Google-Apps-Script/
+ *
  * Этот скрипт модификация моей версии января 2022 года: https://habr.com/ru/post/645935/
  *
  * Спасибо @Sergey_050krd (это ссылка на телеграм) за склонение год, лет, года и создание комментариев.
- *
- * https://github.com/empenoso/Google-Apps-Script/
  *
  */
 
