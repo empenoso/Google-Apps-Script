@@ -124,7 +124,7 @@ function anniversaryAgeToCalendar() {
             Logger.log('birthdayAgeToCalendar. Юбилеи. ' + name + ', ' + years + ' ' + text(years) + '.');
         }
 
-        // Заголовок уведомления для говщин, юбилеев
+        // Заголовок уведомления для годовщин, юбилеев
         try {
             var event = defaultCal.createAllDayEvent("Сегодня юбилей у " + name + ", " + years + " " + text(years),
                 new Date(bdayMonthName + ' ' + bdayDay + ', ' + new Date().getFullYear()), {
@@ -183,7 +183,7 @@ function TriggersCreateTimeDriven() {
         .atHour(1) // час
         .create();
 
-    // Теперь создаем для говщин, юбилеев     
+    // Теперь создаем для годовщин, юбилеев     
     ScriptApp.newTrigger("anniversaryAgeToCalendar")
         .timeBased()
         .onMonthDay(1) // день месяца
