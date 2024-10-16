@@ -94,6 +94,7 @@ function birthdayAgeToCalendar() {
         // event.setColor(CalendarApp.EventColor.RED); 
 
         // Устанавливаем время уведомлений для дней рождения
+        event.addPopupReminder(660); // В день события в 11:00
         event.addPopupReminder(0 - 24 * 60); // В день события в 00:00
         event.addPopupReminder(24 * 60 * 1 - 9 * 60); // За день в 09:00
         // event.addPopupReminder(24 * 60 * 2 - 9 * 60); // За 2 дня в 09:00
